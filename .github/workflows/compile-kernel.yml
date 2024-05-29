@@ -73,11 +73,11 @@ on:
       kernel_sign:
         description: "Set the kernel custom signature"
         required: false
-        default: "-lemon1151"
+        default: "-Lemon1151"
         type: choice
         options:
           - -ophub
-          - -lemon1151
+          - -Lemon1151
 
 env:
   TZ: America/New_York
