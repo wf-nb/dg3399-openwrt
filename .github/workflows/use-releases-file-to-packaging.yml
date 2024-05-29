@@ -21,7 +21,7 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "all"
+        default: "fine3399"
         type: choice
         options:
           - all
@@ -154,21 +154,27 @@ on:
           - tvi3315a
           - vplus
           - xiaobao
+          - xiaobao_fine3399
           - zcube1-max
           - zysj
       openwrt_kernel:
         description: "Select kernel version"
         required: false
-        default: "6.1.y_6.6.y"
+        default: "6.6.y"
         type: choice
         options:
-          - 5.4.y
           - 5.10.y
-          - 5.15.y
+          - 5.10.210
+          - 5.10.216
+          - 5.10.218
           - 6.1.y
+          - 6.1.81
+          - 6.1.87
+          - 6.1.92
           - 6.6.y
-          - 6.1.y_6.6.y
-          - 5.15.y_5.10.y
+          - 6.6.28
+          - 6.6.30
+          - 6.6.32
       auto_kernel:
         description: "Auto use the latest kernel"
         required: false
@@ -177,9 +183,10 @@ on:
       kernel_repo:
         description: "Set the kernel repository"
         required: false
-        default: "ophub/kernel"
+        default: "Lemon1151/kernel"
         type: choice
         options:
+          - Lemon1151/kernel
           - ophub/kernel
       kernel_usage:
         description: "Set the tags of the stable kernel."
@@ -202,12 +209,12 @@ on:
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
-        default: "ophub"
+        default: "Lemon1151"
         type: choice
         options:
           - ophub
           - angel
-          - yourname
+          - Lemon1151
 
 env:
   TZ: America/New_York
@@ -287,7 +294,7 @@ jobs:
           armvirt_tarfile_path="openwrt/output"
           [[ -d "${armvirt_tarfile_path}" ]] || mkdir -p ${armvirt_tarfile_path}
           ln -sf /builder/openwrt ${GITHUB_WORKSPACE}/openwrt
-          ln -sf /builder/openwrt /home/runner/work/_actions/ophub/amlogic-s9xxx-openwrt/main/openwrt
+          ln -sf /builder/openwrt /home/runner/work/_actions/Lemon1151/rk3399-openwrt/main/openwrt
 
           latest_version="$(curl -s \
                               -H "Accept: application/vnd.github+json" \
@@ -317,7 +324,7 @@ jobs:
 
       - name: Packaging OpenWrt
         if: ${{ steps.down.outputs.status }} == 'success' && !cancelled()
-        uses: ophub/amlogic-s9xxx-openwrt@main
+        uses: Lemon1151/rk3399-openwrt@main
         with:
           openwrt_path: openwrt/output/*rootfs.tar.gz
           openwrt_board: ${{ inputs.openwrt_board }}
