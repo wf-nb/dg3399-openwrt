@@ -17,7 +17,7 @@ inputs:
   kernel_repo:
     description: "Select kernel repository."
     required: false
-    default: "ophub/kernel"
+    default: "lemon1151/kernel"
   kernel_usage:
     description: "Set the tags of the stable kernel."
     required: false
@@ -25,7 +25,7 @@ inputs:
   openwrt_kernel:
     description: "Select kernel version."
     required: false
-    default: "6.1.y_5.15.y"
+    default: "6.6.y_6.1.y"
   auto_kernel:
     description: "Auto use the latest kernel."
     required: false
