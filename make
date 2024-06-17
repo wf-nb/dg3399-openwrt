@@ -952,7 +952,7 @@ refactor_rootfs() {
     echo "rtl8188fu" >etc/modules.d/rtl8188fu
     # Realtek RTL8822CS Wireless LAN Driver
     echo "88x2cs" >etc/modules.d/88x2cs
-    # Realtek RTL8821CU Wireless LAN Driver
+    # Realtek RTW8821CU Wireless LAN Driver
     echo "rtw8821cu" >etc/modules.d/rtw8821cu
     # USB Ralink Wireless LAN Driver
     echo "rt2500usb" >etc/modules.d/rt2500-usb
