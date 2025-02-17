@@ -163,7 +163,7 @@ jobs:
           armvirt_tarfile_path="openwrt/output"
           [[ -d "${armvirt_tarfile_path}" ]] || mkdir -p ${armvirt_tarfile_path}
           ln -sf /builder/openwrt ${GITHUB_WORKSPACE}/openwrt
-          ln -sf /builder/openwrt /home/runner/work/_actions/Lemon1151/rk3399-openwrt/main/openwrt
+          ln -sf /builder/openwrt /home/runner/work/_actions/wf-nb/dg3399-openwrt/main/openwrt
 
           latest_version="$(curl -s \
                               -H "Accept: application/vnd.github+json" \
