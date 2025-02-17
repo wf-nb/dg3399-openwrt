@@ -21,20 +21,10 @@ on:
       openwrt_board:
         description: "Select device board"
         required: false
-        default: "fine3399"
+        default: "dg3399"
         type: choice
         options:
-          - fine3399_tpm312_xiaobao_zysj
-          - fine3399_xiaobao
-          - fine3399
-          - fmx1-pro
-          - king3399
-          - sw799
-          - tn3399
-          - tpm312
-          - tvi3315a
-          - xiaobao
-          - zysj
+          - dg3399
       openwrt_kernel:
         description: "Select kernel version"
         required: false
