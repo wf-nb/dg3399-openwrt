@@ -25,7 +25,6 @@ on:
         type: choice
         options:
           - dg3399
-          - sw799
       openwrt_kernel:
         description: "Select kernel version"
         required: false
