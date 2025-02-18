@@ -278,7 +278,7 @@ jobs:
             - Default IP: 10.10.10.1
             - Default username: root
             - Default password: password
-            - Default WIFI name: LEDE
+            - Default WIFI name: OpenWrt/LEDE
             - Default WIFI password: none
             ### Install to EMMC
             - Login to OpenWrt → System → Amlogic Service → Install OpenWrt
