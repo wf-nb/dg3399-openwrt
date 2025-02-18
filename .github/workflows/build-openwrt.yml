@@ -83,12 +83,13 @@ on:
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
-        default: "Lemon1151"
+        default: "NateF"
         type: choice
         options:
           - ophub
           - angel
           - Lemon1151
+          - NateF
 
 env:
   FEEDS_CONF: config/${{ inputs.source_branch }}/feeds.conf.default
@@ -274,10 +275,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             ### OpenWrt Image information
-            - Default IP: 192.168.1.1
+            - Default IP: 10.10.10.1
             - Default username: root
             - Default password: password
-            - Default WIFI name: OpenWrt
+            - Default WIFI name: LEDE
             - Default WIFI password: none
             ### Install to EMMC
             - Login to OpenWrt → System → Amlogic Service → Install OpenWrt
